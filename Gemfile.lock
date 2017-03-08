@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    cellular_lang (0.0.1)
+      treetop (~> 1.6)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.10.1)
+    polyglot (0.3.5)
+    treetop (1.6.8)
+      polyglot (~> 0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cellular_lang!
+  minitest (~> 5.10)
+
+BUNDLED WITH
+   1.14.6

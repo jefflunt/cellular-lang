@@ -1,0 +1,41 @@
+grammar CellularLang
+	rule program
+		(command whitespace? comment? newline?)* <Program>
+	end
+
+  rule command
+    two_param_op <Command>
+  end
+
+  rule one_param_op
+    'move' whitespace param <OneParamOp>
+  end
+
+  rule two_param_op
+    'add' whitespace param whitespace param <TwoParamOp>
+  end
+
+  rule comment
+    '#' .* <Comment>
+  end
+
+  rule whitespace
+    [\s]* <Whitespace>
+  end
+
+  rule param
+    identifier / value <Param>
+  end
+
+  rule identifier
+    [a-z] [a-z_]* <Identifier>
+  end
+
+  rule value
+    [0-9]* <Value>
+  end
+
+	rule newline
+		"\n"
+	end
+end
