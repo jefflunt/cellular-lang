@@ -27,4 +27,46 @@ class TestParser < MiniTest::Spec
     it { refute_nil(tree) }
     it { assert_nil(failure_reason) }
   end
+
+#  describe '::sense' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
+#
+#  describe '::signal' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
+#
+#  describe '::jump' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
+#
+#  describe '::vent' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
+#
+#  describe '::split' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
+#
+#  describe '::copy' do
+#    let(:prog) { load_sample('move') }
+#
+#    it { refute_nil(tree) }
+#    it { assert_nil(failure_reason) }
+#  end
 end
