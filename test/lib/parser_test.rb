@@ -90,4 +90,11 @@ class TestParser < MiniTest::Spec
     it { refute_nil(tree) }
     it { assert_nil(failure_reason) }
   end
+
+  describe 'variable storage' do
+    let(:prog) { load_sample('variable_storage') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
 end

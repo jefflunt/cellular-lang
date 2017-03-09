@@ -8,7 +8,7 @@ grammar CellularLang
   end
 
   rule command
-    ( two_param_command / one_param_command / jump_point ) <Command>
+    ( two_param_command / one_param_command / jump_point ) ( whitespace variable_storage )? <Command>
   end
 
   rule two_param_command
@@ -37,6 +37,10 @@ grammar CellularLang
 
   rule param
     '^' / identifier / constant / value <Param>
+  end
+
+  rule variable_storage
+    '>' whitespace identifier
   end
 
   rule jump_point
