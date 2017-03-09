@@ -14,6 +14,20 @@ class TestParser < MiniTest::Spec
     it { assert(failure_reason.start_with?(err_prefix)) }
   end
 
+  describe '::blank_line' do
+    let(:prog) { load_sample('blank_line') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
+  describe '::blank_line_with_whitespace' do
+    let(:prog) { load_sample('blank_line_with_whitespace') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
   describe '::add' do
     let(:prog) { load_sample('add') }
 
@@ -58,6 +72,13 @@ class TestParser < MiniTest::Spec
 
   describe '::split' do
     let(:prog) { load_sample('split') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
+  describe '^ param' do
+    let(:prog) { load_sample('caret_param') }
 
     it { refute_nil(tree) }
     it { assert_nil(failure_reason) }

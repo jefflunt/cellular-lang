@@ -1,6 +1,10 @@
 grammar CellularLang
-	rule program
-		(command whitespace? comment? newline?)* <Program>
+  rule program
+    line+ <Program>
+  end
+
+	rule line
+		(command whitespace? comment?) <Statement>
 	end
 
   rule command
@@ -28,11 +32,12 @@ grammar CellularLang
   end
 
   rule whitespace
-    [\s]* <Whitespace>
+    [\s]+ <Whitespace>
   end
 
   rule param
-    jump_point / identifier / constant / value <Param>
+    # jump_point doesn't technically belong in this list
+    '^' / jump_point / identifier / constant / value <Param>
   end
 
   rule jump_point
@@ -50,8 +55,4 @@ grammar CellularLang
   rule value
     [0-9]* <Value>
   end
-
-	rule newline
-		"\n"
-	end
 end
