@@ -3,9 +3,9 @@ grammar CellularLang
     line+ <Program>
   end
 
-	rule line
+  rule line
     (command whitespace? comment?) / whitespace <Line>
-	end
+  end
 
   rule command
     ( two_param_command / one_param_command ) <Command>
