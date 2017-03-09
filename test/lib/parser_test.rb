@@ -8,10 +8,10 @@ class TestParser < MiniTest::Spec
 
   describe 'failed parsing' do
     let(:prog) { load_sample('garbage') }
-    let(:err_msg) { "Expected 'add' at line 1, column 1 (byte 1)" }
+    let(:err_prefix) { 'Expected one of' }
 
     it { assert_nil(tree) }
-    it { assert_equal(err_msg, failure_reason) }
+    it { assert(failure_reason.start_with?(err_prefix)) }
   end
 
   describe '::add' do
@@ -34,39 +34,32 @@ class TestParser < MiniTest::Spec
 #    it { refute_nil(tree) }
 #    it { assert_nil(failure_reason) }
 #  end
-#
-#  describe '::signal' do
-#    let(:prog) { load_sample('move') }
-#
-#    it { refute_nil(tree) }
-#    it { assert_nil(failure_reason) }
-#  end
-#
-#  describe '::jump' do
-#    let(:prog) { load_sample('move') }
-#
-#    it { refute_nil(tree) }
-#    it { assert_nil(failure_reason) }
-#  end
-#
-#  describe '::vent' do
-#    let(:prog) { load_sample('move') }
-#
-#    it { refute_nil(tree) }
-#    it { assert_nil(failure_reason) }
-#  end
-#
-#  describe '::split' do
-#    let(:prog) { load_sample('move') }
-#
-#    it { refute_nil(tree) }
-#    it { assert_nil(failure_reason) }
-#  end
-#
-#  describe '::copy' do
-#    let(:prog) { load_sample('move') }
-#
-#    it { refute_nil(tree) }
-#    it { assert_nil(failure_reason) }
-#  end
+
+  describe '::signal' do
+    let(:prog) { load_sample('signal') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
+  describe '::jump' do
+    let(:prog) { load_sample('jump') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
+  describe '::vent' do
+    let(:prog) { load_sample('vent') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
+  describe '::split' do
+    let(:prog) { load_sample('split') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
 end

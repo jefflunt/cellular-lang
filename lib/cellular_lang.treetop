@@ -4,15 +4,23 @@ grammar CellularLang
 	end
 
   rule command
-    two_param_op <Command>
+    ( two_param_command / one_param_command ) <Command>
   end
 
-  rule one_param_op
-    'move' whitespace param <OneParamOp>
+  rule two_param_command
+    two_param_op whitespace param whitespace param <TwoParamOp>
   end
 
   rule two_param_op
-    'add' whitespace param whitespace param <TwoParamOp>
+    'add'
+  end
+
+  rule one_param_command
+    one_param_op whitespace param <OneParamOp>
+  end
+
+  rule one_param_op
+    'move' / 'signal' / 'jump' / 'split' / 'vent'
   end
 
   rule comment
@@ -24,11 +32,19 @@ grammar CellularLang
   end
 
   rule param
-    identifier / value <Param>
+    jump_point / identifier / constant / value <Param>
+  end
+
+  rule jump_point
+    identifier '.'
   end
 
   rule identifier
     [a-z] [a-z_]* <Identifier>
+  end
+
+  rule constant
+    [A-Z] [A-Z0-9_]* <Constant>
   end
 
   rule value

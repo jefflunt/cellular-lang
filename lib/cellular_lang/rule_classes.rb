@@ -6,6 +6,7 @@ module CellularLang
   module Comment; end
   module Whitespace; end
   module Param; end
+  module Constant; end
   module Identifier; end
   module Value; end
 end
