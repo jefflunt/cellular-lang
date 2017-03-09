@@ -8,7 +8,7 @@ grammar CellularLang
   end
 
   rule command
-    ( two_param_command / one_param_command ) <Command>
+    ( two_param_command / one_param_command / jump_point ) <Command>
   end
 
   rule two_param_command
@@ -24,7 +24,7 @@ grammar CellularLang
   end
 
   rule one_param_op
-    'move' / 'signal' / 'jump' / 'split' / 'vent'
+    'move' / 'signal' / 'split' / 'vent'
   end
 
   rule comment
@@ -36,12 +36,11 @@ grammar CellularLang
   end
 
   rule param
-    # jump_point doesn't technically belong in this list
-    '^' / jump_point / identifier / constant / value <Param>
+    '^' / identifier / constant / value <Param>
   end
 
   rule jump_point
-    identifier '.'
+    'jump' whitespace identifier '.'
   end
 
   rule identifier
