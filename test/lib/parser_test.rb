@@ -35,6 +35,13 @@ class TestParser < MiniTest::Spec
     it { assert_nil(failure_reason) }
   end
 
+  describe '::mul' do
+    let(:prog) { load_sample('mul') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
+
   describe '::move' do
     let(:prog) { load_sample('move') }
 

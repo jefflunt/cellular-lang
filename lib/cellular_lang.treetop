@@ -16,7 +16,7 @@ grammar CellularLang
   end
 
   rule two_param_op
-    'add'
+    ( 'add' / 'mul' )
   end
 
   rule one_param_command
