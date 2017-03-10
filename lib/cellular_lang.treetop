@@ -4,7 +4,7 @@ grammar CellularLang
   end
 
   rule line
-    (command whitespace? comment?) / whitespace <Line>
+    comment / (command whitespace? comment?) / whitespace <Line>
   end
 
   rule command
