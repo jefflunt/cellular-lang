@@ -104,4 +104,27 @@ class TestParser < MiniTest::Spec
     it { refute_nil(tree) }
     it { assert_nil(failure_reason) }
   end
+
+  describe 'comments' do
+    describe 'end-of-line comments' do
+      let(:prog) { load_sample('end-of-line-comments') }
+
+      it { refute_nil(tree) }
+      it { assert_nil(failure_reason) }
+    end
+
+    describe 'whole-line comments' do
+      let(:prog) { load_sample('whole-line-comments') }
+
+      it { refute_nil(tree) }
+      it { assert_nil(failure_reason) }
+    end
+
+    describe 'invalid commands after comments' do
+      let(:prog) { load_sample('invalid-commands-after-comments') }
+
+      it { assert_nil(tree) }
+      it { refute_nil(failure_reason) }
+    end
+  end
 end
