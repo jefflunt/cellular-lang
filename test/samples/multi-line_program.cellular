@@ -1,0 +1,8 @@
+# This is a multi-line program
+
+add 4 5 > nine
+add nine 1 > ten
+mul ten 10        # 100
+val ^ > one_hundred
+
+# Isn't this multi-line program wonderful

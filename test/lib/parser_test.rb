@@ -97,4 +97,11 @@ class TestParser < MiniTest::Spec
     it { refute_nil(tree) }
     it { assert_nil(failure_reason) }
   end
+
+  describe 'multi-line programs' do
+    let(:prog) { load_sample('multi-line_program') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
 end

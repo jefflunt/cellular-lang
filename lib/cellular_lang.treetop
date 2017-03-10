@@ -36,7 +36,7 @@ grammar CellularLang
   end
 
   rule param
-    '^' / identifier / constant / value <Param>
+    '^' / identifier / value <Param>
   end
 
   rule variable_storage
@@ -49,10 +49,6 @@ grammar CellularLang
 
   rule identifier
     [a-z] [a-z_]* <Identifier>
-  end
-
-  rule constant
-    [A-Z] [A-Z0-9_]* <Constant>
   end
 
   rule value
