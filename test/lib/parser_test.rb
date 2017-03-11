@@ -106,22 +106,22 @@ class TestParser < MiniTest::Spec
   end
 
   describe 'comments' do
-    describe 'end-of-line comments' do
-      let(:prog) { load_sample('end-of-line-comments') }
+    describe 'end-of-line' do
+      let(:prog) { load_sample('comments-end-of-line') }
 
       it { refute_nil(tree) }
       it { assert_nil(failure_reason) }
     end
 
-    describe 'whole-line comments' do
-      let(:prog) { load_sample('whole-line-comments') }
+    describe 'whole-line' do
+      let(:prog) { load_sample('comments-whole-line') }
 
       it { refute_nil(tree) }
       it { assert_nil(failure_reason) }
     end
 
-    describe 'invalid commands after comments' do
-      let(:prog) { load_sample('invalid-commands-after-comments') }
+    describe 'does not consume all input' do
+      let(:prog) { load_sample('comments-does-not-consume-all-input') }
 
       it { assert_nil(tree) }
       it { refute_nil(failure_reason) }

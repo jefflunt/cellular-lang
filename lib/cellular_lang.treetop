@@ -28,7 +28,7 @@ grammar CellularLang
   end
 
   rule comment
-    '#' .* <Comment>
+    '#' ( !"\n" ( . / "\n" ) )* <Comment>
   end
 
   rule whitespace
