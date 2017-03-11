@@ -1,6 +1,14 @@
 grammar CellularLang
   rule program
-    line+ <Program>
+    ( subroutine / line)+ <Program>
+  end
+
+  rule subroutine
+    jump_point_name ( whitespace? comment )? "\n" subroutine_line+ <Subroutine>
+  end
+
+  rule subroutine_line
+    '  ' line <SubroutineLine>
   end
 
   rule line
@@ -44,7 +52,11 @@ grammar CellularLang
   end
 
   rule jump_point
-    'jump' whitespace identifier '.'
+    'jump' whitespace jump_point_name
+  end
+
+  rule jump_point_name
+    identifier '.'
   end
 
   rule identifier

@@ -1,5 +1,7 @@
 module CellularLang
   module Program; end
+  module Subroutine; end
+  module SubroutineLine; end
   module Line; end
   module Command; end
   module OneParamOp; end

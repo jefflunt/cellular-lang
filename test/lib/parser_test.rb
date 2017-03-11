@@ -127,4 +127,11 @@ class TestParser < MiniTest::Spec
       it { refute_nil(failure_reason) }
     end
   end
+
+  describe 'subroutines' do
+    let(:prog) { load_sample('subroutine') }
+
+    it { refute_nil(tree) }
+    it { assert_nil(failure_reason) }
+  end
 end
