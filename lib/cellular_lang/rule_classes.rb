@@ -1,15 +1,21 @@
+require 'treetop'
+
 module CellularLang
-  module Program; end
-  module Subroutine; end
-  module SubroutineLine; end
-  module Line; end
-  module Command; end
-  module OneParamOp; end
-  module TwoParamOp; end
-  module Comment; end
-  module Whitespace; end
-  module Param; end
-  module Constant; end
-  module Identifier; end
-  module Value; end
+  class Program < Treetop::Runtime::SyntaxNode
+  end
+
+  class Subroutine < Treetop::Runtime::SyntaxNode
+  end
+
+  class Command < Treetop::Runtime::SyntaxNode
+  end
+
+  class JumpPointName < Treetop::Runtime::SyntaxNode
+  end
+
+  class Comment < Treetop::Runtime::SyntaxNode
+  end
+
+  class Whitespace < Treetop::Runtime::SyntaxNode
+  end
 end

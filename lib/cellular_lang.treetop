@@ -8,11 +8,11 @@ grammar CellularLang
   end
 
   rule subroutine_line
-    '  ' line <SubroutineLine>
+    '  ' line
   end
 
   rule line
-    comment / (command whitespace? comment?) / whitespace <Line>
+    comment / (command whitespace? comment?) / whitespace
   end
 
   rule command
@@ -20,7 +20,7 @@ grammar CellularLang
   end
 
   rule two_param_command
-    two_param_op whitespace param whitespace param <TwoParamOp>
+    two_param_op whitespace param whitespace param
   end
 
   rule two_param_op
@@ -28,7 +28,7 @@ grammar CellularLang
   end
 
   rule one_param_command
-    one_param_op whitespace param <OneParamOp>
+    one_param_op whitespace param
   end
 
   rule one_param_op
@@ -44,7 +44,7 @@ grammar CellularLang
   end
 
   rule param
-    '^' / identifier / value <Param>
+    '^' / identifier / value
   end
 
   rule variable_storage
@@ -56,14 +56,14 @@ grammar CellularLang
   end
 
   rule jump_point_name
-    identifier '.'
+    identifier '.' <JumpPointName>
   end
 
   rule identifier
-    [a-z] [a-z_]* <Identifier>
+    [a-z] [a-z_]*
   end
 
   rule value
-    [0-9]* <Value>
+    [0-9]*
   end
 end
