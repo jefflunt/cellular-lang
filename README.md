@@ -52,7 +52,7 @@ And these are invalid value names:
 _foo        # must start with a lower-case letter
 2_bar       # must start with a lower-case letter
 Baz         # cannot contain upper-case letters
-
+```
 
 ## Jump points
 
@@ -142,8 +142,6 @@ add 2 2   # 2 + 2 = 4
 add ^ ^   # 4 + 4 = 8
 add ^ ^   # 8 + 8 = 16
 ```
-
-
 
 Example code
 op [param1] [param2] > variable
