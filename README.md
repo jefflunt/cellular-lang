@@ -1,4 +1,4 @@
-`cellular` is an interpreted, assembly-like language, where each line contains a
+`cellular` is an assembly-like grammar, where each line contains a
 single command made up of:
 
 * an operation (or "op")
